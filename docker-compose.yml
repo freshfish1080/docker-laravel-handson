@@ -21,5 +21,19 @@ services:
     ports:  #追加
       - 33060:3306
 
+  #追記
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=phper
+      - PMA_PASSWORD=secret
+    ports:
+      - 3000:80
+    volumes:
+      - pma-session-store:/sessions
+
 volumes:
   db-store:
+  # 追記
+  pma-session-store:

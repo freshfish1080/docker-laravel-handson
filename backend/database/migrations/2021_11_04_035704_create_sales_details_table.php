@@ -27,7 +27,7 @@ class CreateSalesDetailsTable extends Migration
             $table->softDeletes();
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-            $table->foreign('goods_id')->references('goods_id')->on('goods');
+            // $table->foreign('goods_id')->references('goods_id')->on('goods');
             $table->foreign('sales_slips_num')->references('sales_slips_num')->on('sales_slips');
 
         });
