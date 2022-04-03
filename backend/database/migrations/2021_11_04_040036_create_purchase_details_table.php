@@ -27,7 +27,7 @@ class CreatePurchaseDetailsTable extends Migration
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->foreign('goods_id')->references('goods_id')->on('goods');
-            $table->foreign('purchase_slips_no')->references('purchase_slips_no')->on('purchase_slips');
+            // $table->foreign('purchase_slips_no')->references('purchase_slips_no')->on('purchase_slips');
         });
     }
 
